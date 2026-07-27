@@ -1,0 +1,269 @@
+@font-face{font-family:Volkhov;src:url('../fonts/volkhov-400.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Volkhov;src:url('../fonts/volkhov-700.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:Yaldevi;src:url('../fonts/yaldevi-400.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:Yaldevi;src:url('../fonts/yaldevi-600.woff2') format('woff2');font-style:normal;font-weight:600;font-display:swap}
+@font-face{font-family:'Work Sans';src:url('../fonts/work-sans-700.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+@font-face{font-family:Vollkorn;src:url('../fonts/vollkorn-700.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+
+:root{
+  --navy:#000942;
+  --navy-overlay:rgba(0,9,66,.92);
+  --paper:#fbf3fd;
+  --mint:rgba(153,196,173,.39);
+  --blue:#2174bc;
+  --ink:#000;
+  --muted:#d7dcdd;
+  --danger:#cf0f12;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--ink);font-family:Volkhov,Georgia,serif;line-height:1.25}
+button,input,select,textarea{font:inherit}
+button,a{touch-action:manipulation}
+img{display:block;max-width:100%}
+a{color:inherit}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* Shared Figma header */
+.site-header{height:139px;background:var(--navy-overlay);position:relative;z-index:50}
+.header-inner{width:calc(100% - 198px);max-width:1242px;height:100%;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.site-brand{width:178px;height:96px;overflow:hidden;display:block;flex:0 0 auto;text-decoration:none}
+.site-brand img{width:100%;height:100%;object-fit:cover}
+.site-nav{margin-left:auto;display:flex;align-items:center;gap:32px;color:#fff;font-size:18px;font-weight:700;white-space:nowrap}
+.site-nav a,.site-nav button{text-decoration:none;transition:opacity .18s ease,transform .18s ease}
+.site-nav a:hover,.site-nav button:hover,.site-nav a.active{opacity:.78}
+.nav-auth-button,.nav-signup{height:36px;border:0;border-radius:0;background:#d7dcdd;color:#cf0f12!important;display:inline-flex;align-items:center;justify-content:center;padding:0 14px;min-width:91px;cursor:pointer;font-weight:400}
+.nav-signup{color:#0e4388!important;min-width:106px}
+.logout-form{margin:0;display:flex}
+.logout-form .nav-auth-button{min-width:105px;font-size:18px}
+.notification-count{min-width:20px;height:20px;margin-left:5px;padding:0 6px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#cf0f12;color:#fff;font-size:12px}
+.nav-toggle{display:none;width:44px;height:40px;padding:9px;border:1px solid rgba(255,255,255,.55);background:transparent;border-radius:6px;cursor:pointer}
+.nav-toggle span{display:block;height:2px;margin:4px 0;background:#fff}
+
+.site-main{min-height:calc(100vh - 278px)}
+.page-shell{width:calc(100% - 238px);max-width:1202px;margin:0 auto}
+.flash-stack:empty{display:none}
+.flash-stack{position:relative;z-index:40;width:calc(100% - 40px);max-width:1100px;margin:0 auto}
+.alert{margin:16px 0 0;padding:15px 18px;border-radius:10px;font:600 16px/1.4 Yaldevi,Arial,sans-serif;box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.alert-success{background:#d9f7e5;color:#155b36}
+.alert-danger{background:#fde1e2;color:#7c1111}
+.alert-warning{background:#fff1bf;color:#704e00}
+.alert-info{background:#dbeefe;color:#12466e}
+
+/* Shared Figma footer */
+.site-footer{height:139px;background:var(--navy-overlay);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center}
+.site-footer p{margin:0;font-size:18px;font-weight:400}
+
+/* Desktop 1 — landing */
+.landing-main{min-height:885px}
+.landing-hero{min-height:885px;background:linear-gradient(rgba(255,255,255,.60),rgba(255,255,255,.60)),url('../images/study-group.jpg') center center/cover no-repeat}
+.landing-hero-inner{width:calc(100% - 198px);max-width:1242px;min-height:885px;margin:0 auto;position:relative}
+.landing-copy{position:absolute;left:0;top:167px;width:588px}
+.landing-copy h1{margin:0 0 27px;font:700 35px/1.17 'Work Sans',Arial,sans-serif;letter-spacing:-.5px}
+.landing-copy p{margin:0;color:#621515;font:700 24px/1.2 Vollkorn,Georgia,serif}
+.capability-card{position:absolute;top:185px;right:-13px;width:505px;height:279px;padding:20px 45px 24px 60px;border-radius:30px;background:rgba(210,20,23,.30)}
+.capability-card h2{margin:0 0 9px;font-size:24px;line-height:1.1;text-align:center}
+.capability-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:22px;row-gap:4px}
+.capability-grid span{min-height:39px;display:flex;align-items:center;gap:9px;font:600 16px/1 Yaldevi,Arial,sans-serif}
+.capability-grid img{width:34px;height:28px;object-fit:contain;flex:0 0 34px}
+.landing-features{position:absolute;left:12px;right:-15px;top:595px;display:grid;grid-template-columns:repeat(3,380px);justify-content:space-between}
+.landing-feature{height:220px;padding:26px 18px;border-radius:35px;background:rgba(221,136,17,.35);overflow:hidden}
+.landing-feature h2{margin:0 0 20px;font:700 24px/1 'Work Sans',Arial,sans-serif}
+.landing-feature p{margin:0;font:400 24px/1.18 Yaldevi,Arial,sans-serif}
+
+/* Desktop 2 — login */
+.login-page .site-header{height:126px}
+.login-main{height:898px;min-height:898px;position:relative;background:var(--paper)}
+.login-layout{height:898px;display:grid;grid-template-columns:61.5278% 38.4722%}
+.login-form-panel{background:linear-gradient(rgba(33,116,188,.37),rgba(33,116,188,.37)),var(--paper)}
+.login-visual-panel{background:var(--paper);position:relative}
+.login-form{width:484px;margin-left:17.95%;padding-top:119px;text-align:center}
+.login-user-icon{width:90px;height:90px;margin:0 auto;position:relative;border-radius:50%;background:rgba(251,243,253,.8)}
+.login-user-head{position:absolute;left:32px;top:15px;width:26px;height:26px;border-radius:50%;background:#000}
+.login-user-body{position:absolute;left:22px;top:47px;width:46px;height:30px;border-radius:24px 24px 8px 8px;background:#000}
+.login-form h1{height:39px;margin:0 0 35px;font-size:30px;line-height:39px;font-weight:400;color:#fff}
+.login-form input{display:block;width:484px;height:80px;margin:0 0 38px;padding:0 45px;border:0;border-radius:65px;outline:0;background:rgba(210,203,219,.86);color:#000;font-size:22px}
+.login-form input:nth-of-type(2){height:91px;margin-bottom:72px}
+.login-form input::placeholder{color:rgba(0,0,0,.7);opacity:1}
+.login-form input:focus{box-shadow:0 0 0 4px rgba(4,17,100,.20)}
+.login-submit{width:226px;height:71px;border:0;border-radius:65px;background:rgba(4,17,100,.85);color:#fff;font-size:24px;font-weight:700;cursor:pointer}
+.login-visual-panel img{position:absolute;left:100px;top:248px;width:373px;height:353px;object-fit:contain}
+.login-page .site-footer{height:141px}
+
+/* Desktop 3 — registration */
+.register-main{height:973px;min-height:973px;background:linear-gradient(rgba(255,255,255,.25),rgba(255,255,255,.25)),url('../images/campus-bus.jpg') center/cover no-repeat;position:relative;overflow:hidden}
+.registration-stage{height:973px;display:flex;align-items:flex-start;justify-content:center}
+.registration-card{width:830px;height:972px;padding:19px 114px 20px;background:rgba(170,215,235,.56);border:0;transform:rotate(-.02deg)}
+.registration-card h1{margin:0 0 1px;text-align:center;font-size:20px;line-height:29px;font-weight:700;color:#7c1111}
+.registration-intro{height:48px;margin:0 0 25px;text-align:center;font-size:18px;line-height:24px;color:rgba(39,15,15,.75)}
+.registration-card label{display:block;margin:0 0 13px;font-size:24px;line-height:32px;font-weight:400}
+.registration-card input,.registration-card select{display:block;width:100%;height:80px;margin:0 0 9px;padding:0 35px;border:0;border-radius:50px;background:var(--paper);font-size:24px;color:#000;outline:0}
+.registration-card input::placeholder{color:rgba(0,0,0,.49);opacity:1}
+.registration-card input:focus,.registration-card select:focus{box-shadow:0 0 0 4px rgba(4,17,100,.16)}
+.registration-grid{display:grid;grid-template-columns:283px 283px;gap:18px}
+.registration-grid input,.registration-grid select{height:81px}
+.registration-submit{display:block;width:340px;height:75px;margin:37px auto 0;border:0;border-radius:50px;background:rgba(4,17,100,.84);color:#fff;font-size:24px;cursor:pointer}
+.register-page .site-footer{height:153px}
+
+/* Desktop 5 — dashboard */
+.dashboard-main{min-height:1087px;padding-top:68px;padding-bottom:75px}
+.page-title{margin:0;font-size:40px;line-height:52px;font-weight:700}
+.dashboard-main>.page-title{margin-left:28px;margin-bottom:47px}
+.part-coming-alert{width:calc(100% - 56px);margin:-28px 28px 28px;padding:16px 22px;border-radius:15px;background:#fff1bf;color:#704e00;font-size:18px}
+.dashboard-stats{display:grid;grid-template-columns:270px 270px 257px 281px;justify-content:space-between}
+.dashboard-stat{height:191px;border-radius:40px;padding:24px 42px;color:#143f0b;overflow:hidden}
+.dashboard-stat strong{display:block;margin-bottom:2px;font-size:40px;line-height:52px}
+.dashboard-stat span{display:block;font-size:30px;line-height:38px;font-weight:700;white-space:nowrap}
+.stat-teach{background:#855272}
+.stat-learn{background:#3d7a5e}
+.stat-post{background:#c14a32}
+.stat-session{background:#b8a024}
+.dashboard-panels{width:1176px;max-width:100%;margin:61px auto 0;display:grid;grid-template-columns:634px 538px;gap:21px}
+.dashboard-card{height:269px;border-radius:35px;background:rgba(95,152,166,.44);padding:28px 30px}
+.dashboard-card h2{margin:0 0 8px;font-size:30px;line-height:39px}
+.dashboard-card p{margin:0 0 15px;font-size:20px}
+.dashboard-actions{display:grid;grid-template-columns:repeat(3,187px);gap:19px;margin-left:-13px;margin-top:24px}
+.dashboard-actions a{height:67px;border-radius:20px;background:#d9d9d9;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:22px;font-weight:700}
+.quick-search-card{padding-left:57px}
+.quick-search-card h2{font-size:24px;line-height:31px;margin-bottom:12px}
+.quick-search-card label{display:block;margin-bottom:15px;font-size:20px}
+.quick-search-card input{width:440px;height:58px;border:0;border-radius:15px;background:rgba(217,217,217,.53);padding:0 28px;font-size:18px;outline:0}
+.quick-search-card input::placeholder{color:rgba(0,0,0,.56);opacity:1}
+.quick-search-card button{width:159px;height:39px;margin:18px 0 0 19px;border:0;border-radius:20px;background:#d9d9d9;font-size:18px;font-weight:700;cursor:pointer}
+.recent-request-card{width:1147px;max-width:100%;height:222px;margin:94px auto 0;padding:30px 21px;border-radius:40px;background:rgba(211,168,168,.61)}
+.recent-request-card h2{margin:0 0 22px;font-size:24px;line-height:31px}
+.empty-state{height:100px;border-radius:25px;background:rgba(251,243,253,.60);display:flex;align-items:center;justify-content:center;color:rgba(0,0,0,.56);font-size:18px}
+
+/* Desktop 4 — profile */
+.profile-main{width:100%;max-width:none;min-height:949px;padding:69px max(20px,calc((100% - 1175px)/2)) 51px;background:var(--mint)}
+.profile-summary-card{width:1175px;max-width:100%;height:326px;padding:45px;display:flex;align-items:center;gap:52px;border-radius:10px;background:rgba(255,255,255,.73)}
+.profile-avatar{width:129px;height:122px;border-radius:50%;object-fit:cover;flex:0 0 auto}
+.avatar-initials{display:flex;align-items:center;justify-content:center;background:#387c9b;color:#fff;font-size:45px}
+.profile-summary-copy h1{margin:0 0 5px;font-size:28px;line-height:36px}
+.profile-summary-copy p{margin:13px 0;font-size:18px}
+.profile-meta{display:flex;align-items:center;gap:16px}
+.role-badge{min-width:116px;height:34px;border-radius:30px;background:#d9d9d9;display:inline-flex;align-items:center;justify-content:center;text-transform:lowercase}
+.profile-skill-grid{width:1175px;max-width:100%;margin-top:36px;display:grid;grid-template-columns:572px 572px;gap:31px}
+.profile-skill-card{height:192px;padding:18px 45px;border-radius:10px;background:rgba(255,255,255,.73)}
+.profile-skill-card h2,.profile-post-card h2{margin:0 0 21px;font-size:22px;line-height:28px}
+.profile-empty{min-height:97px;border-radius:15px;background:rgba(94,161,197,.19);display:flex;align-items:center;justify-content:center;color:rgba(0,0,0,.60);font-size:16px;text-align:center;padding:14px}
+.skill-badge-list{display:flex;gap:10px;flex-wrap:wrap}
+.skill-badge{display:inline-flex;align-items:center;min-height:34px;padding:5px 14px;border-radius:17px;font:600 16px/1.2 Yaldevi,Arial,sans-serif}
+.skill-teach{background:#d5eadf;color:#1b600b}
+.skill-learn{background:#d8e9f2;color:#1a5772}
+.profile-post-card{width:1175px;max-width:100%;height:234px;margin-top:41px;padding:24px 49px;border-radius:10px;background:rgba(255,255,255,.73)}
+.profile-post-card .profile-empty{width:1012px;max-width:100%;height:124px}
+
+/* Desktop 6 — edit profile */
+.edit-profile-main{min-height:1090px;background:var(--mint)}
+.edit-profile-stage{min-height:1090px;padding:49px 20px 80px;display:flex;justify-content:center}
+.edit-profile-card{width:821px;min-height:961px;padding:62px 92px 45px;border-radius:30px;background:rgba(63,96,104,.20)}
+.edit-profile-card h1{margin:0 0 27px;font-size:40px;line-height:52px}
+.edit-profile-card label{display:block;margin:0 0 16px;font-size:24px;line-height:31px}
+.edit-profile-card input,.edit-profile-card textarea{width:100%;height:78px;margin:0 0 17px;padding:0 23px;border:0;border-radius:10px;background:var(--paper);font-size:24px;outline:0}
+.edit-profile-grid{display:grid;grid-template-columns:295px 309px;gap:31px}
+.edit-profile-card textarea{height:167px;padding:12px;resize:vertical;font-size:18px;line-height:1.4}
+.profile-file-input{height:100px!important;padding:28px 22px!important}
+.profile-file-input::file-selector-button{height:43px;margin-right:34px;border:0;background:#d9d9d9;padding:0 12px;font-family:Volkhov,serif;font-size:18px;cursor:pointer}
+.upload-help{margin:-11px 0 15px;color:rgba(0,0,0,.62);font:400 14px/1.4 Yaldevi,Arial,sans-serif}
+.save-profile-button{width:174px;height:54px;border:0;border-radius:10px;background:#2174bc;color:#000;font-size:24px;cursor:pointer}
+
+/* Desktop 7 — manage skills */
+.skills-main{width:calc(100% - 292px);max-width:1148px;min-height:949px;padding-top:80px;padding-bottom:146px;background:transparent}
+.skills-page{background:var(--mint)}
+.skills-title{margin-bottom:55px}
+.skills-card{width:1096px;max-width:100%;height:266px;padding:24px 37px;border-radius:10px;background:rgba(255,255,255,.73)}
+.skills-card h2{margin:0 0 16px;font-size:28px;line-height:36px}
+.add-skill-form{display:grid;grid-template-columns:299px 297px 297px;column-gap:35px;align-items:end}
+.add-skill-form label{display:block;margin-bottom:24px;font-size:22px;line-height:28px}
+.add-skill-form input,.add-skill-form select{width:100%;height:48px;padding:0 12px;border:0;border-radius:12px;background:#d9d9d9;font-size:18px;outline:0}
+.add-skill-form input::placeholder{color:rgba(0,0,0,.59);opacity:1}
+.add-skill-button{width:86px;height:45px;margin-top:25px;border:0;border-radius:15px;background:#d9d9d9;font-size:22px;cursor:pointer}
+.my-skills-card{margin-top:75px}
+.my-skills-card h2{margin-bottom:15px}
+.table-wrap{width:100%;overflow:auto}
+.skills-table{width:100%;border-collapse:collapse;font-size:22px}
+.skills-table th{height:59px;padding:0 26px;background:#d9d9d9;text-align:left;font-weight:400}
+.skills-table td{height:58px;padding:8px 26px;border-bottom:1px solid rgba(0,0,0,.12)}
+.skills-table th:nth-child(1){width:23%}.skills-table th:nth-child(2){width:29%}.skills-table th:nth-child(3){width:23%}.skills-table th:nth-child(4){width:25%}
+.skills-table form{margin:0}
+.table-skill-type{min-width:99px;height:31px;padding:0 12px;border-radius:50px;background:#d9d9d9;display:inline-flex;align-items:center;justify-content:center;font-size:18px}
+.table-skill-type.teach{color:#1b600b}.table-skill-type.learn{color:#0e4388}
+.remove-skill-button{width:125px;height:31px;border:0;border-radius:5px;background:rgba(246,12,16,.70);font-size:18px;cursor:pointer}
+.skills-empty{height:100px;border-radius:15px;background:rgba(94,161,197,.19);display:flex;align-items:center;justify-content:center;color:rgba(0,0,0,.6);font-size:18px}
+
+/* Shared components retained for the rest of the supplied prototype */
+.container{width:86%;max-width:1180px;margin:28px auto;min-height:70vh}
+.grid{display:grid;gap:20px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card,.search-box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:22px;box-shadow:0 10px 24px rgba(15,23,42,.06);margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:10px;padding:10px 15px;text-decoration:none;font-weight:700;cursor:pointer}.btn-primary{background:#2174bc;color:#fff}.btn-success{background:#258e5f;color:#fff}.btn-danger{background:#cf0f12;color:#fff}.btn-light,.btn-muted{background:#d7dcdd;color:#0e4388}
+.actions{display:flex;gap:10px;flex-wrap:wrap}.form-group{margin-bottom:15px}.form-group label{display:block;margin-bottom:6px;font-weight:700}.form-group input,.form-group select,.form-group textarea,.search-box input{width:100%;padding:12px 14px;border:1px solid #cbd5e1;border-radius:10px;background:#fff}.form-group textarea{min-height:110px;resize:vertical}
+.form-inline{display:flex;gap:10px;align-items:flex-end}.form-inline .form-group{flex:1}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:22px 0}.stat{background:#fff;border-radius:16px;padding:20px}.stat strong{display:block;font-size:28px;color:#2174bc}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#dbeafe;color:#1d4ed8;font-size:12px;font-weight:700;margin:3px}.badge-green{background:#dcfce7;color:#166534}.badge-red{background:#fee2e2;color:#991b1b}.badge-yellow{background:#fef3c7;color:#92400e}
+.post{border-bottom:1px solid #e5e7eb;padding-bottom:18px;margin-bottom:18px}.meta,.small{font-size:14px;color:#64748b}.avatar-row{display:flex;gap:12px;align-items:center}.avatar{width:54px;height:54px;border-radius:50%;object-fit:cover}.avatar-lg{width:120px;height:120px;border-radius:50%;object-fit:cover}.profile-header{display:flex;gap:25px;align-items:center}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left}.table th{background:#f8fafc}.empty{padding:28px;border:1px dashed #94a3b8;border-radius:14px;text-align:center;color:#64748b}.comment{background:#f8fafc;padding:14px;border-radius:14px;margin:12px 0}.admin-layout{display:grid;grid-template-columns:230px 1fr;gap:20px}.sidebar{background:#111827;color:#fff;border-radius:18px;padding:18px;height:max-content}.sidebar a{display:block;color:#d1d5db;text-decoration:none;padding:10px;border-radius:8px}
+
+@media(max-width:1100px){
+  .header-inner{width:calc(100% - 80px)}
+  .site-nav{gap:17px;font-size:16px}
+  .landing-hero-inner{width:calc(100% - 80px)}
+  .landing-copy{width:47%}
+  .capability-card{right:0;width:45%}
+  .landing-features{left:0;right:0;grid-template-columns:repeat(3,1fr);gap:22px}
+  .landing-feature{width:auto}
+  .dashboard-stats{grid-template-columns:repeat(2,1fr);gap:22px}
+  .dashboard-panels{grid-template-columns:1fr;gap:22px}
+  .dashboard-card{width:100%}.dashboard-actions{grid-template-columns:repeat(3,1fr)}
+  .profile-skill-grid{grid-template-columns:1fr 1fr}.profile-skill-card{width:auto}
+  .skills-main{width:calc(100% - 80px)}
+  .add-skill-form{grid-template-columns:repeat(3,1fr);column-gap:20px}
+}
+
+@media(max-width:850px){
+  .site-header,.login-page .site-header{height:88px}
+  .header-inner{width:calc(100% - 32px)}
+  .site-brand{width:130px;height:70px}
+  .nav-toggle{display:block}
+  .site-nav{display:none;position:absolute;left:16px;right:16px;top:78px;padding:18px;background:#000942;flex-direction:column;align-items:stretch;gap:8px;white-space:normal;box-shadow:0 18px 35px rgba(0,0,0,.24)}
+  .site-nav.open{display:flex}.site-nav a,.site-nav form,.site-nav button{width:100%;min-height:44px}.site-nav a{display:flex;align-items:center;padding:0 12px}.nav-auth-button,.nav-signup{min-width:100%}
+  .site-footer,.login-page .site-footer,.register-page .site-footer{height:100px;padding:20px}.site-footer p{font-size:14px}
+  .page-shell{width:calc(100% - 32px)}
+  .landing-main,.landing-hero,.landing-hero-inner{min-height:0}
+  .landing-hero{padding:54px 0}
+  .landing-hero-inner{width:calc(100% - 32px);display:flex;flex-direction:column;gap:28px}
+  .landing-copy,.capability-card,.landing-features{position:static;width:100%;height:auto}
+  .landing-copy h1{font-size:34px}.landing-copy p{font-size:20px}
+  .capability-card{padding:26px}
+  .landing-features{display:grid;grid-template-columns:1fr}.landing-feature{height:auto;min-height:190px}
+  .login-main,.login-layout{height:auto;min-height:0}
+  .login-layout{grid-template-columns:1fr}
+  .login-form-panel{padding:55px 20px}
+  .login-form{width:100%;max-width:484px;margin:0 auto;padding:0}
+  .login-form input{width:100%}
+  .login-visual-panel{min-height:440px}.login-visual-panel img{position:static;width:300px;height:320px;margin:60px auto}
+  .register-main,.registration-stage{height:auto;min-height:0}.registration-stage{padding:28px 16px}
+  .registration-card{width:100%;height:auto;padding:30px 22px;transform:none;border-radius:12px}
+  .registration-grid{grid-template-columns:1fr;gap:0}.registration-submit{width:100%;max-width:340px}
+  .dashboard-main{padding-top:40px}.dashboard-main>.page-title{margin-left:0}
+  .dashboard-stats{grid-template-columns:1fr}.dashboard-stat{width:100%}
+  .dashboard-panels{margin-top:38px}.dashboard-card{height:auto;min-height:269px;padding:28px 22px}
+  .dashboard-actions{grid-template-columns:1fr;margin-left:0}.quick-search-card{padding-left:22px}.quick-search-card input{width:100%}
+  .recent-request-card{height:auto;margin-top:38px}
+  .profile-main{padding:32px 16px;background:var(--mint)}
+  .profile-summary-card{height:auto;padding:30px;flex-direction:column;text-align:center}.profile-meta{justify-content:center;flex-wrap:wrap}
+  .profile-skill-grid{grid-template-columns:1fr;gap:20px}.profile-skill-card{height:auto;min-height:192px}.profile-post-card{height:auto}
+  .edit-profile-stage{padding:32px 16px}.edit-profile-card{width:100%;min-height:0;padding:32px 22px}.edit-profile-grid{grid-template-columns:1fr;gap:0}.edit-profile-card h1{font-size:34px}
+  .skills-main{width:calc(100% - 32px);padding:40px 0 70px}.skills-title{margin-bottom:30px}
+  .skills-card{height:auto;padding:24px}.add-skill-form{grid-template-columns:1fr;gap:18px}.add-skill-form label{margin-bottom:8px}.add-skill-button{margin-top:0}.my-skills-card{margin-top:30px}.skills-table{min-width:720px}
+  .grid-2,.grid-3,.stats,.admin-layout{grid-template-columns:1fr}.form-inline{display:block}.profile-header{display:block;text-align:center}
+}
+
+@media(max-width:520px){
+  .capability-grid{grid-template-columns:1fr}
+  .login-user-icon{width:78px;height:78px}.login-user-head{left:27px}.login-user-body{left:17px;top:44px}
+  .login-form input{height:68px!important;margin-bottom:24px!important}.login-submit{width:100%;height:62px}
+  .registration-card input,.registration-card select{height:64px;font-size:18px}.registration-card label{font-size:20px}.registration-intro br{display:none}
+  .dashboard-stat span{font-size:26px}.dashboard-actions{gap:12px}.quick-search-card button{margin-left:0}
+  .profile-summary-copy h1{font-size:25px}.profile-meta{font-size:15px!important}
+  .profile-file-input{font-size:14px!important}.profile-file-input::file-selector-button{margin-right:8px;font-size:14px}
+}
