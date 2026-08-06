@@ -1,6 +1,6 @@
 <?php
 // Campus Connect configuration for XAMPP localhost.
-// If your folder name is different, change BASE_URL to match it.
+// Rename the extracted folder to "campus-connect" or update BASE_URL below.
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'campus_connect');
 define('DB_USER', 'root');

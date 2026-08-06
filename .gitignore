@@ -1,0 +1,7 @@
+/uploads/profiles/*
+/uploads/posts/*
+/uploads/comments/*
+!/uploads/profiles/.gitkeep
+!/uploads/posts/.gitkeep
+!/uploads/comments/.gitkeep
+!/uploads/.htaccess

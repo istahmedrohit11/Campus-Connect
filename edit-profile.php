@@ -19,8 +19,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $photo = upload_profile_photo();
         if ($photo) {
+            $oldPhoto = $user['profile_photo'] ?? null;
             $stmt = db()->prepare('UPDATE users SET name = ?, department = ?, semester = ?, bio = ?, profile_photo = ? WHERE id = ?');
             $stmt->execute([$name, $department, $semester, $bio, $photo, $user['id']]);
+            if ($oldPhoto && $oldPhoto !== $photo) delete_uploaded_file($oldPhoto);
         } else {
             $stmt = db()->prepare('UPDATE users SET name = ?, department = ?, semester = ?, bio = ? WHERE id = ?');
             $stmt->execute([$name, $department, $semester, $bio, $user['id']]);

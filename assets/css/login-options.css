@@ -1,0 +1,524 @@
+/*
+ * Campus Connect role-selection screen.
+ * The Figma frame is 1440 x 1055. Desktop measurements below are expressed
+ * against the viewport height so the complete frame keeps the same proportions
+ * and remains visible without vertical scrolling.
+ */
+
+body.login-choice-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 10.9005vh 76.8720vh 12.2275vh;
+  overflow: hidden;
+  background: #141c50;
+}
+
+.login-choice-page .site-header {
+  height: 100%;
+  min-height: 0;
+  background: #141c50;
+}
+
+.login-choice-page .header-inner {
+  width: min(calc(100% - 18.8vh), 110.2vh);
+  max-width: none;
+}
+
+.login-choice-page .site-brand {
+  width: 16.872vh;
+  height: 6.825vh;
+}
+
+.login-choice-page .site-nav {
+  gap: 3.033vh;
+  font-size: 1.706vh;
+}
+
+.login-choice-page .nav-auth-button,
+.login-choice-page .nav-signup {
+  min-width: 8.626vh;
+  height: 3.412vh;
+  padding: 0 1.327vh;
+}
+
+.login-choice-page .nav-signup {
+  min-width: 10.047vh;
+}
+
+.login-choice-main {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #fbf3fd;
+}
+
+.login-choice-main > .flash-stack {
+  position: absolute;
+  z-index: 20;
+  top: 11.9vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.login-choice-layout {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 61.5278% 38.4722%;
+}
+
+.login-choice-form-panel {
+  height: 100%;
+  background: linear-gradient(180deg, #a8c3df 0%, #bfd0e6 100%);
+}
+
+.login-choice-visual-panel {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #fbf3fd;
+}
+
+.login-choice-content {
+  width: 45.877vh;
+  margin: 0 auto;
+  padding-top: 7.204vh;
+  text-align: center;
+}
+
+.login-choice-user-icon {
+  width: 8.531vh;
+  height: 8.531vh;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 50%;
+  background: rgba(251, 243, 253, .90);
+}
+
+.login-choice-user-head {
+  position: absolute;
+  left: 3.033vh;
+  top: 1.422vh;
+  width: 2.464vh;
+  height: 2.464vh;
+  border-radius: 50%;
+  background: #000;
+}
+
+.login-choice-user-body {
+  position: absolute;
+  left: 2.085vh;
+  top: 4.455vh;
+  width: 4.360vh;
+  height: 2.844vh;
+  border-radius: 2.275vh 2.275vh .758vh .758vh;
+  background: #000;
+}
+
+.login-choice-content h1 {
+  height: 3.697vh;
+  margin: .569vh 0 0;
+  color: #fff;
+  font: 400 2.844vh/3.697vh Volkhov, Georgia, serif;
+}
+
+.login-choice-subtitle {
+  margin: .379vh 0 0;
+  color: rgba(255, 255, 255, .82);
+  font: 400 1.232vh/1.706vh Yaldevi, Arial, sans-serif;
+}
+
+.login-option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.896vh;
+  margin-top: 3.223vh;
+}
+
+.login-option-card {
+  width: 45.877vh;
+  height: 9.479vh;
+  padding: 0 2.275vh 0 2.464vh;
+  border: 0;
+  border-radius: 4.929vh;
+  background: #d0cada;
+  color: #000942;
+  display: grid;
+  grid-template-columns: 6.635vh minmax(0, 1fr) 4.171vh;
+  align-items: center;
+  column-gap: 1.896vh;
+  text-align: left;
+  text-decoration: none;
+  box-shadow: 0 .758vh 0 rgba(70, 126, 176, .30);
+  transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+}
+
+.login-option-card:hover,
+.login-option-card:focus-visible {
+  transform: translateY(-.19vh);
+  background: #ddd7e5;
+  box-shadow: 0 .948vh 0 rgba(70, 126, 176, .36);
+  outline: .284vh solid rgba(255, 255, 255, .58);
+  outline-offset: .19vh;
+}
+
+.login-option-icon {
+  width: 6.635vh;
+  height: 6.635vh;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-option-icon svg {
+  width: 4.550vh;
+  height: 4.550vh;
+  display: block;
+}
+
+.login-option-student .login-option-icon {
+  background: #1252a0;
+}
+
+.login-option-teacher .login-option-icon {
+  background: #2174bc;
+}
+
+.login-option-admin .login-option-icon {
+  background: #f8f6ff;
+}
+
+.login-option-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.login-option-copy strong {
+  margin: 0 0 .758vh;
+  color: #000942;
+  font: 700 1.896vh/1.1 Volkhov, Georgia, serif;
+}
+
+.login-option-copy small {
+  color: rgba(0, 0, 0, .55);
+  font: 400 1.043vh/1.25 Yaldevi, Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.login-option-arrow {
+  width: 4.171vh;
+  height: 4.171vh;
+  padding-bottom: .284vh;
+  border-radius: 50%;
+  background: #172b83;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 400 2.844vh/1 Arial, sans-serif;
+}
+
+.login-choice-note {
+  margin: 3.507vh 0 0;
+  color: rgba(255, 255, 255, .75);
+  font: 400 1.137vh/1.3 Yaldevi, Arial, sans-serif;
+}
+
+.login-choice-visual-panel img {
+  position: absolute;
+  left: 10.995vh;
+  top: 22.275vh;
+  width: 31.564vh;
+  height: 28.720vh;
+  max-width: none;
+  object-fit: fill;
+}
+
+.login-choice-page .site-footer {
+  height: 100%;
+  min-height: 0;
+  background: #141c50;
+}
+
+.login-choice-page .site-footer p {
+  font-size: 1.422vh;
+}
+
+/* Keep the exact desktop composition through compact landscape screens. */
+@media (max-aspect-ratio: 6 / 5), (max-width: 680px) {
+  body.login-choice-page {
+    min-height: 100vh;
+    display: block;
+    overflow: auto;
+    background: #fbf3fd;
+  }
+
+  .login-choice-page .site-header {
+    height: 88px;
+  }
+
+  .login-choice-page .header-inner {
+    width: calc(100% - 32px);
+  }
+
+  .login-choice-page .site-brand {
+    width: 130px;
+    height: 56px;
+  }
+
+  .login-choice-page .site-nav {
+    gap: 17px;
+    font-size: 16px;
+  }
+
+  .login-choice-main {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .login-choice-layout {
+    height: auto;
+    display: block;
+  }
+
+  .login-choice-form-panel {
+    min-height: 680px;
+    padding: 0 20px;
+  }
+
+  .login-choice-content {
+    width: 100%;
+    max-width: 484px;
+    padding-top: 48px;
+  }
+
+  .login-choice-user-icon {
+    width: 78px;
+    height: 78px;
+  }
+
+  .login-choice-user-head {
+    left: 28px;
+    top: 13px;
+    width: 23px;
+    height: 23px;
+  }
+
+  .login-choice-user-body {
+    left: 19px;
+    top: 41px;
+    width: 40px;
+    height: 26px;
+    border-radius: 21px 21px 7px 7px;
+  }
+
+  .login-choice-content h1 {
+    height: 36px;
+    margin-top: 5px;
+    font-size: 27px;
+    line-height: 36px;
+  }
+
+  .login-choice-subtitle {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .login-option-list {
+    gap: 17px;
+    margin-top: 28px;
+  }
+
+  .login-option-card {
+    width: 100%;
+    height: 94px;
+    grid-template-columns: 64px minmax(0, 1fr) 40px;
+    column-gap: 15px;
+    padding: 0 18px;
+    border-radius: 48px;
+    box-shadow: 0 7px 0 rgba(70, 126, 176, .30);
+  }
+
+  .login-option-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .login-option-icon svg {
+    width: 43px;
+    height: 43px;
+  }
+
+  .login-option-copy strong {
+    margin-bottom: 7px;
+    font-size: 18px;
+  }
+
+  .login-option-copy small {
+    font-size: 10.5px;
+    white-space: normal;
+  }
+
+  .login-option-arrow {
+    width: 40px;
+    height: 40px;
+    padding-bottom: 2px;
+    font-size: 27px;
+  }
+
+  .login-choice-note {
+    margin-top: 31px;
+    font-size: 11px;
+  }
+
+  .login-choice-visual-panel {
+    height: 360px;
+  }
+
+  .login-choice-visual-panel img {
+    top: 34px;
+    left: 50%;
+    width: 275px;
+    height: 300px;
+    transform: translateX(-50%);
+  }
+
+  .login-choice-page .site-footer {
+    height: 100px;
+  }
+
+  .login-choice-page .site-footer p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 520px) {
+  .login-choice-form-panel {
+    min-height: 640px;
+    padding: 0 14px;
+  }
+
+  .login-choice-content {
+    padding-top: 38px;
+  }
+
+  .login-choice-user-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .login-choice-user-head {
+    left: 25px;
+    top: 12px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .login-choice-user-body {
+    left: 17px;
+    top: 37px;
+    width: 36px;
+    height: 24px;
+  }
+
+  .login-choice-content h1 {
+    height: 32px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .login-option-list {
+    gap: 15px;
+    margin-top: 24px;
+  }
+
+  .login-option-card {
+    height: 88px;
+    grid-template-columns: 56px minmax(0, 1fr) 36px;
+    column-gap: 12px;
+    padding: 0 14px;
+    border-radius: 45px;
+  }
+
+  .login-option-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .login-option-icon svg {
+    width: 38px;
+    height: 38px;
+  }
+
+  .login-option-copy strong {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  .login-option-copy small {
+    font-size: 9.5px;
+  }
+
+  .login-option-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+  }
+
+  .login-choice-visual-panel {
+    height: 315px;
+  }
+
+  .login-choice-visual-panel img {
+    top: 25px;
+    width: 235px;
+    height: 265px;
+  }
+}
+
+/* Final pixel-alignment adjustments from the supplied Desktop · Primary frame. */
+@media (min-width: 681px) and (min-aspect-ratio: 6 / 5) {
+  .login-choice-page .site-brand {
+    margin-left: 1.80vh;
+  }
+
+  .login-choice-page .site-nav {
+    gap: 2.60vh;
+    font-size: 1.25vh;
+  }
+
+  .login-choice-content,
+  .login-option-card {
+    width: 45vh;
+  }
+
+  .login-choice-content h1 {
+    font-size: 2.45vh;
+  }
+
+  .login-option-icon {
+    width: 6.16vh;
+    height: 6.16vh;
+    justify-self: center;
+  }
+
+  .login-option-icon svg {
+    width: 4.25vh;
+    height: 4.25vh;
+  }
+
+  .login-choice-visual-panel img {
+    left: 10.40vh;
+    top: 22.58vh;
+    width: 31.10vh;
+    transform: none;
+  }
+}

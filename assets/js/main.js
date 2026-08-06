@@ -15,16 +15,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.querySelectorAll('[data-confirm]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      if (!confirm(btn.dataset.confirm || 'Are you sure?')) e.preventDefault();
+  document.querySelectorAll('[data-confirm]').forEach((button) => {
+    button.addEventListener('click', (event) => {
+      if (!window.confirm(button.dataset.confirm || 'Are you sure?')) event.preventDefault();
     });
   });
 
-  const fileInput = document.querySelector('.profile-file-input');
-  if (fileInput) {
-    fileInput.addEventListener('change', () => {
-      fileInput.setAttribute('title', fileInput.files?.[0]?.name || 'Choose a profile photo');
+  document.querySelectorAll('input[type="file"]').forEach((input) => {
+    input.addEventListener('change', () => {
+      input.setAttribute('title', input.files?.[0]?.name || 'Choose a file');
     });
-  }
+  });
+
+  const ratingInputs = document.querySelectorAll('.star-rating input');
+  const caption = document.querySelector('[data-rating-caption]');
+  const labels = {1: 'Needs improvement', 2: 'Fair', 3: 'Good', 4: 'Very good', 5: 'Excellent'};
+  ratingInputs.forEach((input) => {
+    input.addEventListener('change', () => {
+      if (caption) caption.textContent = `${input.value} star${input.value === '1' ? '' : 's'} — ${labels[input.value]}`;
+    });
+    if (input.checked && caption) caption.textContent = `${input.value} star${input.value === '1' ? '' : 's'} — ${labels[input.value]}`;
+  });
 });

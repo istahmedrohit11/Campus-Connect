@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $form['semester'],
             ]);
             flash('success', 'Registration successful. Please login.');
-            redirect('login.php');
+            redirect('login.php?role=' . rawurlencode($form['role']));
         } catch (PDOException $e) {
             flash('danger', 'This email is already registered.');
         }
